@@ -13,9 +13,11 @@ public class Main {
         System.out.println("Įvestas skaičius: " + numberCycle(33));
         System.out.println();
         System.out.println("====== Uždavinys - 5 ======");
-        System.out.println("RANDOM NUMBER: " + twoNumberCycle(3,60));
+        System.out.println("RANDOM NUMBER: " + rndInt(30,3));
         System.out.println();
-
+        System.out.println("====== Uždavinys - 6 ======");
+        System.out.println("Atsitiktinis skaitmuo: " + randomArray(3,40,8).length);
+        System.out.println();
 
     }
     // Uždavinys - 1
@@ -27,7 +29,6 @@ public class Main {
     public static double PISq() {
         return 9.8596;
     }
-
     // Uždavinys - 3
     public static int multiplication (int a, int b) {
         System.out.print( a + " * " + b );
@@ -42,12 +43,23 @@ public class Main {
         return a;
     }
     // Uždavinys - 5
-    // Įvedus du kintamuosius MIN ir MAX sugeneruoti Random skaičių ir jį gražinti
-    public static int twoNumberCycle(int min, int max) {
-       int minMAX = min + (int) Math.round(Math.random() * (max - min));
-        System.out.println("MIN: " + min);
-        System.out.println("MAX: " + max);
-       return minMAX;
+    public static int rndInt(int a, int b) {
+       int rndNum = a + (int) Math.round(Math.random() * (b - a));
+       System.out.println("Įvestų skaičių intervalas: [ " + a + " ir " + b + " ]");
+       return rndNum;
+
+    }
+    // Uždavinys - 6
+    public static int[] randomArray(int min, int max, int length) {
+        int[] randomArray = new int[length];
+        int i = 0;
+        while (i < randomArray.length) {
+            randomArray[i] = min + (int) Math.round(Math.random() * (max - min));
+            i++;
+        }
+        System.out.println("MIN reikšmė = " + min);
+        System.out.println("MAX reikšmė = " + max);
+        return randomArray;
     }
 
 }
