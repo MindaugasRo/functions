@@ -6,18 +6,32 @@ public class Main {
         System.out.println("====== Uždavinys - 2 ======");
         System.out.println("Rezultatas: " + PISq());
         System.out.println();
+
         System.out.println("====== Uždavinys - 3 ======");
         System.out.println(" = " + multiplication(42,34));
         System.out.println();
+
         System.out.println("====== Uždavinys - 4 ======");
-        System.out.println("Įvestas skaičius: " + numberCycle(33));
+        int[] arr = {5,7,8};
+        numberCycle(arr);
         System.out.println();
+
         System.out.println("====== Uždavinys - 5 ======");
-        System.out.println("RANDOM NUMBER: " + rndInt(30,3));
+        int ra = 4;
+        int rb = 26;
+        int randomNumber = rndInt( ra,rb ) ;
+        System.out.println("Atsitiktinis skaicius " + randomNumber + " tarp " + ra + " ir " + rb);
         System.out.println();
+
         System.out.println("====== Uždavinys - 6 ======");
-        System.out.println("Atsitiktinis skaitmuo: " + randomArray(3,40,8).length);
+        int[] rndArr = randomArray(3,40,3);
+        System.out.println("Masyvo ilgis: " + rndArr.length);
+        numberCycle(rndArr);
         System.out.println();
+
+        System.out.println("====== Uždavinys - 7 ======");
+        System.out.println(sumArray(rndArr));
+
 
     }
     // Uždavinys - 1
@@ -35,19 +49,15 @@ public class Main {
         return a * b;
     }
     // Uždavinys - 4
-    public static int numberCycle(int a) {
-        for (int i = 0; i < a; i++) {
-            System.out.print( (i + 1) + " " );
+    public static void numberCycle(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print( arr[i] + " " );
         }
         System.out.println();
-        return a;
     }
     // Uždavinys - 5
-    public static int rndInt(int a, int b) {
-       int rndNum = a + (int) Math.round(Math.random() * (b - a));
-       System.out.println("Įvestų skaičių intervalas: [ " + a + " ir " + b + " ]");
-       return rndNum;
-
+    public static int rndInt(int ra, int rb) {
+        return ra + (int) Math.round(Math.random() * (rb - ra));
     }
     // Uždavinys - 6
     public static int[] randomArray(int min, int max, int length) {
@@ -57,10 +67,18 @@ public class Main {
             randomArray[i] = min + (int) Math.round(Math.random() * (max - min));
             i++;
         }
-        System.out.println("MIN reikšmė = " + min);
-        System.out.println("MAX reikšmė = " + max);
         return randomArray;
     }
+    // Uždavinys - 7
+    public static int sumArray (int[] arr) {
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+        return sum ;
+    }
+    // Uždavinys - 8
+
 
 }
 
